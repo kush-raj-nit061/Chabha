@@ -1,0 +1,154 @@
+[gd_scene load_steps=5 format=3 uid="uid://m7ao4yvfnygd"]
+
+[ext_resource type="Texture2D" uid="uid://b2s3c805o3ytc" path="res://WhatsApp Image 2023-12-25 at 21.28.37_e2c7973d.png" id="1_4okw0"]
+[ext_resource type="Texture2D" uid="uid://cg6mjbja48w2h" path="res://chabhaExtension.png" id="2_qlu31"]
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_hu8ai"]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_3inrt"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_hu8ai")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon" type="Node2D" parent="."]
+
+[node name="upperArm2" type="Polygon2D" parent="Polygon"]
+position = Vector2(-132, -908)
+scale = Vector2(0.981406, 1.00558)
+texture = ExtResource("1_4okw0")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(637.143, 1062.86, 714.286, 1008.57, 788.571, 1037.14, 788.571, 1137.14, 791.429, 1234.29, 688.571, 1242.86, 654.286, 1220, 660, 1171.43)
+uv = PackedVector2Array(637.143, 1062.86, 714.286, 1008.57, 788.571, 1037.14, 788.571, 1137.14, 791.429, 1234.29, 688.571, 1242.86, 654.286, 1220, 660, 1171.43)
+
+[node name="LowerArm" type="Polygon2D" parent="Polygon/upperArm2"]
+position = Vector2(33, -117)
+texture = ExtResource("1_4okw0")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(551.429, 1337.14, 605.714, 1345.71, 677.143, 1245.71, 751.429, 1288.57, 728.571, 1402.86, 725.714, 1460, 682.857, 1505.71, 597.143, 1491.43, 537.143, 1417.14)
+uv = PackedVector2Array(551.429, 1337.14, 605.714, 1345.71, 677.143, 1245.71, 751.429, 1288.57, 728.571, 1402.86, 725.714, 1460, 682.857, 1505.71, 597.143, 1491.43, 537.143, 1417.14)
+
+[node name="UpperLeg" type="Polygon2D" parent="Polygon"]
+position = Vector2(-511, -592)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(771.429, 968.571, 931.429, 960, 957.143, 1068.57, 957.143, 1068.57, 942.857, 1194.29, 865.714, 1217.14, 748.571, 1211.43)
+uv = PackedVector2Array(771.429, 968.571, 931.429, 960, 957.143, 1068.57, 957.143, 1068.57, 942.857, 1194.29, 865.714, 1217.14, 748.571, 1211.43)
+
+[node name="LowerLeg" type="Polygon2D" parent="Polygon/UpperLeg"]
+position = Vector2(-14, -81)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(788.571, 1217.14, 942.857, 1220, 951.429, 1334.29, 942.857, 1420, 1000, 1505.71, 982.857, 1560, 900, 1548.57, 845.714, 1525.71, 797.143, 1488.57, 808.571, 1400, 777.143, 1305.71)
+uv = PackedVector2Array(788.571, 1217.14, 942.857, 1220, 951.429, 1334.29, 942.857, 1420, 1000, 1505.71, 982.857, 1560, 900, 1548.57, 845.714, 1525.71, 797.143, 1488.57, 808.571, 1400, 777.143, 1305.71)
+
+[node name="UpperLeg2" type="Polygon2D" parent="Polygon"]
+position = Vector2(-347, -607)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(771.429, 968.571, 931.429, 960, 957.143, 1068.57, 957.143, 1068.57, 942.857, 1194.29, 865.714, 1217.14, 748.571, 1211.43)
+uv = PackedVector2Array(771.429, 968.571, 931.429, 960, 957.143, 1068.57, 957.143, 1068.57, 942.857, 1194.29, 865.714, 1217.14, 748.571, 1211.43)
+
+[node name="LowerLeg2" type="Polygon2D" parent="Polygon/UpperLeg2"]
+position = Vector2(-14, -81)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(788.571, 1217.14, 942.857, 1220, 951.429, 1334.29, 942.857, 1420, 1000, 1505.71, 982.857, 1560, 900, 1548.57, 845.714, 1525.71, 797.143, 1488.57, 808.571, 1400, 777.143, 1305.71)
+uv = PackedVector2Array(788.571, 1217.14, 942.857, 1220, 951.429, 1334.29, 942.857, 1420, 1000, 1505.71, 982.857, 1560, 900, 1548.57, 845.714, 1525.71, 797.143, 1488.57, 808.571, 1400, 777.143, 1305.71)
+
+[node name="torso" type="Polygon2D" parent="Polygon"]
+position = Vector2(-29, -368)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(388, 389, 389, 441, 358, 456, 281, 458, 247, 521, 287, 564, 310, 620, 315, 742, 345, 800, 421, 813, 485, 802, 549, 770, 575, 708, 578, 646, 588, 582, 613, 546, 620, 488, 594, 462, 542, 440, 479, 421, 454, 401)
+uv = PackedVector2Array(388, 389, 389, 441, 358, 456, 281, 458, 247, 521, 287, 564, 310, 620, 315, 742, 345, 800, 421, 813, 485, 802, 549, 770, 575, 708, 578, 646, 588, 582, 613, 546, 620, 488, 594, 462, 542, 440, 479, 421, 454, 401)
+
+[node name="Head" type="Polygon2D" parent="Polygon"]
+position = Vector2(-98, -194)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(383, 89, 386, 142, 381, 187, 407, 212, 421, 251, 467, 277, 530, 264, 591, 239, 605, 191, 597, 162, 620, 125, 617, 71, 582, 44, 535, 49, 497, 48, 461, 38, 436, 43, 407, 61)
+uv = PackedVector2Array(383, 89, 386, 142, 381, 187, 407, 212, 421, 251, 467, 277, 530, 264, 591, 239, 605, 191, 597, 162, 620, 125, 617, 71, 582, 44, 535, 49, 497, 48, 461, 38, 436, 43, 407, 61)
+
+[node name="upperArm" type="Polygon2D" parent="Polygon"]
+position = Vector2(-12, -847)
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(215.385, 969.231, 192.308, 1028.85, 184.615, 1140.38, 217.308, 1176.92, 301.923, 1169.23, 294.231, 1119.23, 330.769, 1061.54, 330.769, 1001.92, 275, 955.769)
+uv = PackedVector2Array(215.385, 969.231, 192.308, 1028.85, 184.615, 1140.38, 217.308, 1176.92, 301.923, 1169.23, 294.231, 1119.23, 330.769, 1061.54, 330.769, 1001.92, 275, 955.769)
+
+[node name="lowerArm" type="Polygon2D" parent="Polygon/upperArm"]
+position = Vector2(-35, -135)
+rotation = -0.00304029
+texture = ExtResource("2_qlu31")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(261.538, 1201.92, 261.538, 1201.92, 201.923, 1259.62, 246.154, 1342.31, 253.846, 1423.08, 350, 1450, 405.769, 1421.15, 405.769, 1361.54, 394.231, 1307.69, 355.769, 1311.54, 323.077, 1251.92, 284.615, 1194.23)
+uv = PackedVector2Array(261.538, 1201.92, 261.538, 1201.92, 201.923, 1259.62, 246.154, 1342.31, 253.846, 1423.08, 350, 1450, 405.769, 1421.15, 405.769, 1361.54, 394.231, 1307.69, 355.769, 1311.54, 323.077, 1251.92, 284.615, 1194.23)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_3inrt")
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(423, 432)
+rotation = -1.60336
+scale = Vector2(4.01084, 8.58053)
+rest = Transform2D(-0.130597, -4.00871, 8.57598, -0.27939, 423, 432)
+
+[node name="chest" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(24.196, 0.0186462)
+rest = Transform2D(1, 0, 0, 1, 24.196, 0.0186462)
+
+[node name="neck" type="Bone2D" parent="Skeleton2D/Hip/chest"]
+position = Vector2(66.3826, -0.388371)
+rotation = 1.54976
+scale = Vector2(1, 1)
+rest = Transform2D(0.0210332, 0.999779, -0.999779, 0.0210332, 66.3826, -0.388371)
+
+[node name="upperleftarm" type="Bone2D" parent="Skeleton2D/Hip/chest"]
+position = Vector2(49.0926, -13.5948)
+rotation = -2.87485
+scale = Vector2(1.57328, 1)
+rest = Transform2D(-1.51764, -0.414707, 0.263593, -0.964634, 49.0926, -13.5948)
+
+[node name="lowerleftarm" type="Bone2D" parent="Skeleton2D/Hip/chest/upperleftarm"]
+position = Vector2(19.2171, 0.447388)
+rotation = -0.607875
+scale = Vector2(1.61253, 1.18579)
+rest = Transform2D(1.32367, -0.920957, 0.571124, 0.820864, 19.2171, 0.447388)
+
+[node name="upperrightarm" type="Bone2D" parent="Skeleton2D/Hip/chest"]
+position = Vector2(48.4599, 18.1062)
+rotation = -3.03036
+scale = Vector2(1.57328, 1)
+rest = Transform2D(-1.56356, -0.174633, 0.110999, -0.993821, 48.4599, 18.1062)
+
+[node name="lowerrightarm" type="Bone2D" parent="Skeleton2D/Hip/chest/upperrightarm"]
+position = Vector2(19.2129, -5.48199)
+rotation = 0.75305
+scale = Vector2(1.68792, 1.48293)
+rest = Transform2D(1.23152, 1.15432, -1.01413, 1.08195, 19.2129, -5.48199)
+
+[node name="upperleftleg" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(6.72922, -9.96431)
+rotation = -3.08026
+scale = Vector2(1.81148, 1)
+rest = Transform2D(-1.80808, -0.111033, 0.0612942, -0.99812, 6.72922, -9.96431)
+
+[node name="lowerleftleg" type="Bone2D" parent="Skeleton2D/Hip/upperleftleg"]
+position = Vector2(19.2171, 0.447388)
+rotation = -2.72278
+scale = Vector2(32.2856, -2.04302)
+rest = Transform2D(-29.4953, -13.1297, -0.830838, 1.86645, 19.2171, 0.447388)
+
+[node name="upperrightleg" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(7.29113, 9.79764)
+rotation = -3.08026
+scale = Vector2(1.81148, 1)
+rest = Transform2D(-1.80808, -0.111033, 0.0612942, -0.99812, 7.29113, 9.79764)
+
+[node name="lowerrightleg" type="Bone2D" parent="Skeleton2D/Hip/upperrightleg"]
+position = Vector2(19.2364, -3.89197)
+rotation = -0.449125
+scale = Vector2(32.2209, -1.55708)
+rest = Transform2D(29.0255, -13.9896, -0.67605, -1.40266, 19.2364, -3.89197)
