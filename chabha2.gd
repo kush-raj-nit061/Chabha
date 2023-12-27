@@ -7,11 +7,15 @@ func _ready():
 
 var left_toggle=true
 var right_toggle=true
+@onready var upper_hand = $Torso/UpperHand
+@onready var upper_hand_2 = $Torso/UpperHand2
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var mouse_position = get_global_mouse_position()
-	if(left_toggle):$Torso/UpperHand.look_at(mouse_position)
-	if(right_toggle):$Torso/UpperHand2.look_at(mouse_position)
+	if(left_toggle):upper_hand.global_rotation = get_angle_to(mouse_position)-19.9
+	
+	if(right_toggle):upper_hand_2.global_rotation = get_angle_to(mouse_position)-19.9
 	if(Input.is_action_just_pressed("ui_right")):
 		left_toggle = !left_toggle
 	if(Input.is_action_just_pressed("ui_left")):
@@ -25,4 +29,4 @@ func _process(delta):
 		$Torso.scale.x = 1
 		$AnimationPlayer.play("chabhaAnimation2")
 	else : $AnimationPlayer.play("RESET")
-	
+

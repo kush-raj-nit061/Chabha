@@ -324,7 +324,6 @@ region_rect = Rect2(389.983, 50.1241, 225.019, 215.646)
 [node name="UpperHand" type="Sprite2D" parent="Torso"]
 position = Vector2(-128, -60)
 rotation = -1.01638
-scale = Vector2(1, 1)
 texture = ExtResource("1_y40yr")
 offset = Vector2(0, 40)
 region_enabled = true

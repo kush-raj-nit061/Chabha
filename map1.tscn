@@ -1,20 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj7yaljpx1wmm"]
+[gd_scene load_steps=5 format=3 uid="uid://cj7yaljpx1wmm"]
 
-[ext_resource type="Texture2D" uid="uid://efxp4kqh8hsj" path="res://7686082.jpg" id="1_erg83"]
+[ext_resource type="Texture2D" uid="uid://4lvko1w13ds8" path="res://7686082aa.png" id="1_3x65q"]
+[ext_resource type="Texture2D" uid="uid://cdccwrvrcl3yc" path="res://7686082bb.png" id="1_6rmpo"]
 [ext_resource type="PackedScene" uid="uid://bmg38bwdjxyuy" path="res://chabha2.tscn" id="2_7tg44"]
+[ext_resource type="PackedScene" uid="uid://br54gyshvvf2h" path="res://Lucia.tscn" id="3_y3auk"]
 
 [node name="Map" type="Node2D"]
 position = Vector2(4, 117)
 scale = Vector2(0.868024, 0.801587)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(642, 290)
-scale = Vector2(0.426996, 0.404628)
-texture = ExtResource("1_erg83")
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-3601.75, 246.554)
+scale = Vector2(0.665, 0.4)
+texture = ExtResource("1_6rmpo")
 
-[node name="player" parent="." instance=ExtResource("2_7tg44")]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(11092.5, 247.802)
+scale = Vector2(0.665, 0.4)
+texture = ExtResource("1_3x65q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6724.31, 249.624)
+scale = Vector2(0.665, 0.4)
+
+[node name="lucia" parent="." instance=ExtResource("3_y3auk")]
 z_index = 2
-position = Vector2(123.269, 290.673)
+position = Vector2(236.169, 296.911)
 scale = Vector2(0.346996, 0.36463)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="chabha" parent="." instance=ExtResource("2_7tg44")]
+self_modulate = Color(0.815686, 0.94902, 0, 1)
+z_index = 2
+position = Vector2(721.178, 288.188)
+scale = Vector2(0.346996, 0.36463)
+
+[node name="Camera2D" type="Camera2D" parent="chabha"]
+position = Vector2(-172.642, -78.7175)
