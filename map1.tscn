@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bmg38bwdjxyuy" path="res://chabha2.tscn" id="2_7tg44"]
 
 [node name="Map" type="Node2D"]
+position = Vector2(4, 117)
+scale = Vector2(0.868024, 0.801587)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(642, 290)
@@ -12,7 +14,7 @@ texture = ExtResource("1_erg83")
 
 [node name="player" parent="." instance=ExtResource("2_7tg44")]
 z_index = 2
-position = Vector2(96, 313)
-scale = Vector2(0.426996, 0.404628)
+position = Vector2(123.269, 290.673)
+scale = Vector2(0.346996, 0.36463)
 
 [node name="Camera2D" type="Camera2D" parent="player"]

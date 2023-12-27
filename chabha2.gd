@@ -17,11 +17,11 @@ func _process(delta):
 	if(Input.is_action_just_pressed("ui_left")):
 		right_toggle =!right_toggle
 	if(Input.is_action_pressed("left_press")):
-		$".".position.x-=2
+		$".".position.x-=200*delta
 		$Torso.scale.x = -1
 		$AnimationPlayer.play("chabhaAnimation2")
 	elif (Input.is_action_pressed("right_press")):
-		$".".position.x+=2
+		$".".position.x+=200*delta
 		$Torso.scale.x = 1
 		$AnimationPlayer.play("chabhaAnimation2")
 	else : $AnimationPlayer.play("RESET")
