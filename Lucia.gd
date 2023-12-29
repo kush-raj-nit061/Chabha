@@ -22,4 +22,5 @@ func damage(value):
 func _on_area_2d_body_entered(body):
 	damage(10)
 	print("damage")
+	body.queue_free()
 	pass # Replace with function body.

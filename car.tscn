@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmim1052sqo5s"]
+
+[ext_resource type="Script" path="res://car.gd" id="1_v11wh"]
+[ext_resource type="Texture2D" uid="uid://bjwjb7k35xaya" path="res://car_sprite_sheet_by_lostchild14000_datso11.png" id="2_q5ngr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d68e8"]
+atlas = ExtResource("2_q5ngr")
+region = Rect2(0, 1500, 200, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2vqw"]
+atlas = ExtResource("2_q5ngr")
+region = Rect2(200, 1500, 200, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g485r"]
+atlas = ExtResource("2_q5ngr")
+region = Rect2(400, 1500, 200, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8miqd"]
+atlas = ExtResource("2_q5ngr")
+region = Rect2(800, 1500, 200, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fihhk"]
+atlas = ExtResource("2_q5ngr")
+region = Rect2(600, 1500, 200, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i118"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d68e8")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2vqw")
+}],
+"loop": true,
+"name": &"down_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g485r")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8miqd")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fihhk")
+}],
+"loop": true,
+"name": &"up_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsxrj"]
+
+[node name="Car" type="CharacterBody2D"]
+position = Vector2(471, 209)
+script = ExtResource("1_v11wh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -0.000210166
+sprite_frames = SubResource("SpriteFrames_5i118")
+animation = &"right"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(13.52, 13)
+shape = SubResource("CircleShape2D_tsxrj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

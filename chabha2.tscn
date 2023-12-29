@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmg38bwdjxyuy"]
+[gd_scene load_steps=8 format=3 uid="uid://bmg38bwdjxyuy"]
 
 [ext_resource type="Script" path="res://chabha2.gd" id="1_76ctu"]
 [ext_resource type="Texture2D" uid="uid://cg6mjbja48w2h" path="res://chabhaExtension.png" id="1_y40yr"]
@@ -306,7 +306,11 @@ _data = {
 "chabhaAnimation2": SubResource("Animation_1ta6n")
 }
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvi5u"]
+
+[node name="chabha2" type="CharacterBody2D"]
+collision_layer = 129
+collision_mask = 129
 script = ExtResource("1_76ctu")
 metadata/_edit_horizontal_guides_ = [-42.0]
 
@@ -397,3 +401,7 @@ libraries = {
 "": SubResource("AnimationLibrary_534f4")
 }
 speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(20.68, 20.68)
+shape = SubResource("CircleShape2D_nvi5u")

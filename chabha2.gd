@@ -9,6 +9,9 @@ var left_toggle=true
 var right_toggle=true
 @onready var upper_hand = $Torso/UpperHand
 @onready var upper_hand_2 = $Torso/UpperHand2
+@onready var animation_player = $AnimationPlayer
+
+@onready var torso = $Torso
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,11 +25,17 @@ func _process(delta):
 		right_toggle =!right_toggle
 	if(Input.is_action_pressed("left_press")):
 		$".".position.x-=200*delta
-		$Torso.scale.x = -1
-		$AnimationPlayer.play("chabhaAnimation2")
+		torso.scale.x = -1
+		animation_player.play("chabhaAnimation2")
 	elif (Input.is_action_pressed("right_press")):
 		$".".position.x+=200*delta
-		$Torso.scale.x = 1
-		$AnimationPlayer.play("chabhaAnimation2")
+		torso.scale.x = 1
+		animation_player.play("chabhaAnimation2")
+	elif(Input.is_action_pressed("up_press")):
+		animation_player.play("chabhaAnimation2")
+		position.y-=200*delta
+	elif(Input.is_action_pressed("down_press")):
+		animation_player.play("chabhaAnimation2")
+		position.y+=200*delta
 	else : $AnimationPlayer.play("RESET")
 

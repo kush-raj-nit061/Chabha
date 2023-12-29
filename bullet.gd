@@ -36,3 +36,14 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	queue_free() # Replace with function body.
+
+
+
+
+
+	
+
+
+func _on_area_2d_body_entered(body):
+	pass
+	#queue_free() # Replace with function body.

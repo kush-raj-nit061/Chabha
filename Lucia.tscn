@@ -305,7 +305,8 @@ _data = {
 "chabhaAnimation2": SubResource("Animation_1ta6n")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wxx78"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeppp"]
+size = Vector2(14.8729, 19.1005)
 
 [node name="Node2D" type="CharacterBody2D"]
 script = ExtResource("1_es742")
@@ -445,8 +446,8 @@ speed_scale = 2.0
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 57)
+position = Vector2(-10, 52.5)
 scale = Vector2(26.76, 54.92)
-shape = SubResource("CircleShape2D_wxx78")
+shape = SubResource("RectangleShape2D_eeppp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
