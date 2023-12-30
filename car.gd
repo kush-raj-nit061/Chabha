@@ -14,7 +14,8 @@ var traction_slow = 10
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var acceleration = Vector2.ZERO
 var steer_direction
-var player_in_car = false
+var player_in_car = true
+@onready var collision_shape_2d = $CollisionShape2D
 
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -62,26 +63,44 @@ func apply_animation():
 	animated_sprite_2d.global_rotation = 0
 	if(rad_to_deg(global_rotation)<=-22.5 && rad_to_deg(global_rotation)>-67.5):
 		animated_sprite_2d.play("up_right")
+		collision_shape_2d.scale = Vector2(8.43,3.63)
+		collision_shape_2d.global_rotation=deg_to_rad(-22.5)
+		print(collision_shape_2d.rotation)
 		animated_sprite_2d.flip_h = false
 	elif (rad_to_deg(global_rotation) <= -67.5 && rad_to_deg(global_rotation)>-112.5):
 		animated_sprite_2d.play("up")
+		collision_shape_2d.scale = Vector2(4.44,5.32)
+		collision_shape_2d.global_rotation=deg_to_rad(-67.5)
 		animated_sprite_2d.flip_h = false
 	elif (rad_to_deg(global_rotation) <= -112.5 && rad_to_deg(global_rotation)>-157.5):
 		animated_sprite_2d.play("up_right")
+		collision_shape_2d.scale = Vector2(8.43,3.63)
+		collision_shape_2d.global_rotation=deg_to_rad(-157.5)
 		animated_sprite_2d.flip_h = true
 	elif (rad_to_deg(global_rotation) <= -157.5 && rad_to_deg(global_rotation)>157.5):
 		animated_sprite_2d.play("right")
+		collision_shape_2d.scale = Vector2(9.72,3.88)
+		collision_shape_2d.global_rotation=deg_to_rad(-157.5)
 		animated_sprite_2d.flip_h = true
 	elif (rad_to_deg(global_rotation) <= 157.5 && rad_to_deg(global_rotation)>112.5):
 		animated_sprite_2d.play("down_right")
+		collision_shape_2d.scale = Vector2(8.43,3.63)
+		collision_shape_2d.global_rotation=deg_to_rad(157.5)
 		animated_sprite_2d.flip_h = true
 	elif (rad_to_deg(global_rotation) <= 112.5 && rad_to_deg(global_rotation)>67.5):
 		animated_sprite_2d.play("down")
+		collision_shape_2d.scale = Vector2(4.44,5.32)
+		collision_shape_2d.global_rotation=deg_to_rad(112.5)
 		animated_sprite_2d.flip_h = false
 	elif (rad_to_deg(global_rotation) <= 67.5 && rad_to_deg(global_rotation)>22.5):
 		animated_sprite_2d.play("down_right")
+		collision_shape_2d.scale = Vector2(8.43,3.63)
+		collision_shape_2d.global_rotation=deg_to_rad(22.5)
 		animated_sprite_2d.flip_h = false
-	else: animated_sprite_2d.play("right")
+	else: 
+		animated_sprite_2d.play("right")
+		collision_shape_2d.scale = Vector2(9.72,3.88)
+		collision_shape_2d.global_rotation=deg_to_rad(0)
 
 
 
