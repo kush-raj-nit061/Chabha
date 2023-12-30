@@ -65,7 +65,6 @@ func apply_animation():
 		animated_sprite_2d.play("up_right")
 		collision_shape_2d.scale = Vector2(8.43,3.63)
 		collision_shape_2d.global_rotation=deg_to_rad(-22.5)
-		print(collision_shape_2d.rotation)
 		animated_sprite_2d.flip_h = false
 	elif (rad_to_deg(global_rotation) <= -67.5 && rad_to_deg(global_rotation)>-112.5):
 		animated_sprite_2d.play("up")
